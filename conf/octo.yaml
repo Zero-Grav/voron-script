@@ -1,0 +1,79 @@
+accessControl:
+    salt: aHp6SmqoxSgz0KTq8wMUZlvIzKCYMZr5
+api:
+    allowCrossOrigin: true
+    enabled: true
+    key: E4DCF35D8CD64F1B949944DF936A8624
+appearance:
+    name: Voron
+feature:
+    sdSupport: false
+plugins:
+    _disabled:
+    - errortracking
+    announcements:
+        _config_version: 1
+        channels:
+            _blog:
+                read_until: 1622212200
+            _important:
+                read_until: 1521111600
+            _octopi:
+                read_until: 1611568800
+            _plugins:
+                read_until: 1626238800
+            _releases:
+                read_until: 1620652800
+    cura:
+        cura_engine: null
+    discovery:
+        publicPort: 80
+        upnpUuid: 1a3be0af-cf3b-4516-8271-6b02030fd359
+    errortracking:
+        unique_id: 1d0cb882-40df-42c9-b297-2ec99b40647c
+    gcodeviewer:
+        _config_version: 1
+    softwareupdate:
+        _config_version: 9
+    tracking:
+        enabled: true
+        unique_id: fc86e2b6-8679-4aa8-a1e8-dfe30eb5bb4d
+    virtual_printer:
+        _config_version: 1
+        enabled: true
+printerProfiles:
+    default: _default
+serial:
+    autoconnect: true
+    baudrate: 115200
+    port: VIRTUAL
+server:
+    commands:
+        serverRestartCommand: sudo service octoprint restart
+        systemRestartCommand: sudo shutdown -r now
+        systemShutdownCommand: sudo shutdown -h now
+    firstRun: false
+    onlineCheck:
+        enabled: true
+        host: 185.121.177.177
+    pluginBlacklist:
+        enabled: true
+    secretKey: cV3y6ViMr2VOJ4q6Zyplq5MbZNdKsy01
+    seenWizards:
+        backup: null
+        corewizard: 4
+        tracking: null
+temperature:
+    profiles:
+    -   bed: 100
+        chamber: null
+        extruder: 210
+        name: ABS
+    -   bed: 60
+        chamber: null
+        extruder: 180
+        name: PLA
+webcam:
+    ffmpeg: /usr/bin/ffmpeg
+    snapshot: http://127.0.0.1:8080/?action=snapshot
+    stream: /webcam/?action=stream
