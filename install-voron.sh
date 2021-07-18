@@ -283,3 +283,6 @@ sleep 5
 
 _log "Fin de l'installation : Nettoyage"
 sudo apt autoremove -y
+
+_log "Backup post-installation"
+${CMD_OCTO} plugins backup:backup

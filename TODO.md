@@ -93,9 +93,9 @@ TODO
         * [ ] Script de backup
         * [ ] Script pour optimiser le fichier img
         * [ ] Versionner sur git
-* [ ] Backup :
-    * [ ] Crontab
-    * [ ] ./oprint/bin/octoprint plugins backup
+* [X] Backup :
+    * [X] Crontab
+    * [X] ./oprint/bin/octoprint plugins backup
 * [ ] Divers :
     * [ ] InfluxDB ou API rest
     * [ ] MQTT
