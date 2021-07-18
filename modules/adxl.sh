@@ -12,3 +12,6 @@ _log "=> ADXL : Compilation"
 sudo echo "" > /dev/null
 ~/klippy-env/bin/pip install -v numpy
 sudo apt install -y --no-install-recommends python-numpy python-matplotlib
+
+_log "=> ADXL : Boot"
+echo "dtparam=spi=on" | sudo tee -a /boot/config.txt > /dev/null
