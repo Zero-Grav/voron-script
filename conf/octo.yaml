@@ -21,10 +21,10 @@ plugins:
   DisplayLayerProgress:
     printTimeLeftWithoutSeconds: false
     showAllPrinterMessages: false
+    showOnBrowserTitle: false
     showOnFileListView: false
     showOnNavBar: false
     showOnPrinterDisplay: false
-    showOnState: false
   HeaterTimeout:
     _config_version: 2
     enabled: true
@@ -32,6 +32,19 @@ plugins:
   _disabled:
   - errortracking
   - cura
+  - klipper
+  action_command_notification:
+    enable_popups: true
+  actioncommands:
+    command_definitions:
+    - action: light_on
+      command: M117 "Allumage OK"
+      enabled: true
+      type: gcode
+    - action: light_off
+      command: M117 "Test"
+      enabled: true
+      type: gcode
   announcements:
     _config_version: 1
     channels:
@@ -136,6 +149,64 @@ plugins:
       temp_sensor_temp: ''
       temp_sensor_type: 18b20
       use_fahrenheit: false
+    rpi_outputs:
+    - active_low: true
+      alarm_set_temp: 0
+      auto_shutdown: false
+      auto_startup: false
+      controlled_io: 0
+      controlled_io_set_value: Low
+      default_duty_cycle: 0
+      default_ledstrip_color: ''
+      default_neopixel_color: ''
+      duty_a: 0
+      duty_b: 0
+      duty_cycle: 0
+      gcode: ''
+      gpio_i2c_address: 1
+      gpio_i2c_bus: 1
+      gpio_i2c_data_off: 0
+      gpio_i2c_data_on: 1
+      gpio_i2c_enabled: false
+      gpio_i2c_register: 1
+      gpio_i2c_register_status: 1
+      gpio_pin: 0
+      gpio_status: false
+      hide_btn_ui: false
+      index_id: 1
+      label: Extracteur
+      ledstrip_color: rgb(0,0,0)
+      ledstrip_gpio_clk: ''
+      ledstrip_gpio_dat: ''
+      linked_temp_sensor: ''
+      microcontroller_address: 0
+      neopixel_brightness: 255
+      neopixel_color: rgb(0,0,0)
+      neopixel_count: 0
+      new_duty_cycle: ''
+      new_ledstrip_color: ''
+      new_neopixel_color: ''
+      output_type: regular
+      pwm_frequency: 50
+      pwm_status: 50
+      pwm_temperature_linked: false
+      shell_script: ''
+      show_on_navbar: false
+      shutdown_on_failed: false
+      shutdown_time: 0
+      startup_time: 0
+      startup_with_server: false
+      temp_ctr_deadband: 0
+      temp_ctr_default_value: 0
+      temp_ctr_max_temp: 0
+      temp_ctr_new_set_value: ''
+      temp_ctr_set_value: 0
+      temp_ctr_type: heater
+      temperature_a: 0
+      temperature_b: 0
+      toggle_timer: false
+      toggle_timer_off: 0
+      toggle_timer_on: 0
   errortracking:
     unique_id: 8d32df56-c541-4b1a-9f9b-8e6f915a5a20
   filamentmanager:
@@ -171,6 +242,8 @@ plugins:
   tracking:
     enabled: true
     unique_id: 66480434-6de3-424c-affb-63cb2abfaec8
+  uploadanything:
+    allowed: 3mf, obj, stl, png, gif, jpg, bin
   virtual_printer:
     _config_version: 1
     enabled: true
@@ -186,7 +259,7 @@ serial:
   - /tmp/printer
   autoconnect: true
   baudrate: 250000
-  port: /tmp/printer
+  port: VIRTUAL
 server:
   commands:
     serverRestartCommand: sudo service octoprint restart

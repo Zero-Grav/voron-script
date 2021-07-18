@@ -2,45 +2,25 @@ TODO
 ====
 
 * [ ] Installation initiale :
-    * [X] Vérifier l'utilisateur courant
-    * [X] Forcer la modification du mdp pi/root
-    * [X] Passage du RPI en FR
-    * [X] Changer le hostname
-    * [X] Virer les paquets inutiles
-    * [X] MàJ des dépôts et du Rpi
-    * [X] Installation des outils :
-        * [X] Oh my ZSH
-        * [X] YML parser
     * [ ] Configuration de base d'octoprint :
         * [ ] Orders :
             * [ ] navbar
             * [ ] sidebar
             * [ ] tab
             * [ ] settings
-    * [X] Configuration de l'imprimante dans octoprint
     * [ ] Configuration des options de boot RPI
-    * [X] Klipper :
-        * [X] Téléchargement des sources
-        * [X] Installation
-        * [X] Compilation
-        * [X] Copie des fichiers binaires dans un dossier téléchargeable via octoprint
-        * [X] Plugins Octoklipper :
-            * [X] Installation
-            * [X] Configuration
     * [ ] Octodash :
-        * [X] Installation d'octodash
-        * [X] Installation du plugins octodash-companion
-        * [ ] Configuration :
-            * [X] Octodash
-            * [ ] Plugins
+        * [ ] Configuration des boutons d'actions
         * [ ] Veille
         * [ ] Rotation de l'écran
         * [ ] Splashscreen
-        * [ ] Custom CSS
     * [ ] Plugins :
-        * [ ] Configuration :
-            * [ ] OctoDash-Companion
+        * [ ] À configuration :
+            * [ ] ActiveFilter
             * [ ] Enclosure
+            * [ ] WideScreen
+            * [ ] TabOrder
+        * [ ] À tester/valider :
             * [ ] Calibration Companion
             * [ ] Action Commands et/ou GCODE System Commands
             * [ ] Consolidate Temp Control
@@ -72,8 +52,6 @@ TODO
         * [ ] Crontab :
             * [ ] boot
             * [ ] interval régulier
-            * [X] Backup
-        * [ ] Log
 * [ ] Upgrade :
     * [ ] Script d'upgrade :
         * [ ] MàJ du RPI
@@ -109,17 +87,15 @@ TODO
         * [ ] Compilation du bin
         * [ ] Copie du bin dans un dossier de DL
     * [ ] Dev :
-        * [x] Script pour build une image vierge :
-            * [X] Passer en param l'img et le device
-        * [X] Révocation clé SSH :
+        * [ ] Révocation clé SSH :
             * [X] Passer en param l'adresse IP
+            * [ ] Copier la clé directement sur le nouveau Rpi
         * [ ] Script de backup
         * [ ] Script pour optimiser le fichier img
         * [ ] Versionner sur git
 * [ ] Backup :
     * [ ] Crontab
     * [ ] ./oprint/bin/octoprint plugins backup
-    * [X] Plugins de backup
 * [ ] Divers :
     * [ ] InfluxDB ou API rest
     * [ ] MQTT
