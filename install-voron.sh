@@ -266,6 +266,11 @@ _plugins "TabOrder" "https://github.com/jneilliii/OctoPrint-TabOrder/archive/mas
 _plugins "preheat" "https://github.com/marian42/octoprint-preheat/archive/master.zip"
 
 
+############
+### ADXL ###
+############
+./modules/adxl.sh
+
 
 #############################
 ### FIN DE L'INSTALLATION ###

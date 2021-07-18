@@ -77,10 +77,10 @@ TODO
             * [ ] LED : continue
             * [ ] Action : nada
     * [ ] Beep
-    * [ ] ADXL :
-        * [ ] Installation
-        * [ ] Compilation
-        * [ ] Configuration
+    * [X] ADXL :
+        * [X] Installation
+        * [X] Compilation
+        * [X] Configuration
     * [ ] Klipper :
         * [ ] Upgrade du git
         * [ ] Système d'overwrite de la conf
