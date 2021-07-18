@@ -53,6 +53,8 @@ elif [ ! -e ${DEVICE} ]; then
     echo "Périphérique introuvable"
     exit
 fi
+
+sudo echo "" > /dev/null # Demande des droits sudo
 echo "=> Préparation du flash de ${IMG} => ${DEVICE}"
 
 # Démontage des devices

@@ -3,7 +3,11 @@
 # Script d'installation d'octodash
 #
 
-source ./_common.sh
+if [ -f _common.sh ]; then
+  source ./_common.sh
+elif [ -d modules ]; then
+  source ./modules/_common.sh
+fi
 sudo echo "" > /dev/null
 _log "=> OctoDash"
 
@@ -41,6 +45,7 @@ rm /tmp/octodash.deb
 # API
 _log "  => Configuration"
 _log "    => API"
+mkdir -p $(dirname ${CONF_DASH})
 cp -f ${SCRIPT_DIR}/conf/octodash.json ${CONF_DASH}
 _config api.allowCrossOrigin true
 API_KEY=$(yq3 r ${CONF_OCTO} api.key)

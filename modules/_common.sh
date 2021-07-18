@@ -42,7 +42,7 @@ _log() {
 
 # Configuration octoprint.yml (parametre, valeur, [texte log])
 _config() {
-  if [ ! -z $3 ]; then
+  if [ ! -z "$3" ]; then
     _log "  => $3"
   fi
   yq3 w -i ${CONF_OCTO} $1 $2

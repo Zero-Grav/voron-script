@@ -221,3 +221,21 @@ _plugins "Webcam FullScreen" "https://github.com/BillyBlaze/OctoPrint-FullScreen
 _plugins "Klipper" "https://github.com/AliceGrey/OctoprintKlipperPlugin/archive/master.zip"
 _config plugins.klipper.configuration.reload_command FIRMWARE_RESTART
 _config plugins.klipper.configuration.connection.replace_connection_panel false
+
+# Enclosure
+_plugins "Enclosure" "https://github.com/vitormhenrique/OctoPrint-Enclosure/archive/master.zip"
+
+# FileManager
+_plugins "FileManager" "https://github.com/Salandora/OctoPrint-FileManager/archive/master.zip"
+
+# HeaterTemp
+_plugins "HeaterTimeout" "https://github.com/google/OctoPrint-HeaterTimeout/archive/master.zip"
+_config plugins.HeaterTimeout.enabled true
+_config plugins.HeaterTimeout.timeout 900
+
+
+
+#############################
+### FIN DE L'INSTALLATION ###
+#############################
+./modules/update-octoprint.sh

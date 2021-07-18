@@ -34,6 +34,7 @@ TODO
         * [ ] Configuration :
             * [X] Octodash
             * [ ] Plugins
+        * [ ] Veille
         * [ ] Rotation de l'écran
         * [ ] Splashscreen
         * [ ] Custom CSS
@@ -44,9 +45,13 @@ TODO
             * [X] WebcamTab
             * [X] Webcam FullScreen
             * [X] OctoDash-Companion
+            * [X] Enclosure
+            * [X] FileManager
         * [ ] Configuration :
             * [X] TempsGraph
             * [ ] OctoDash-Companion
+            * [ ] Enclosure
+            * [ ] FileManager
     * [ ] Divers :
         * [ ] GPIO serveur
         * [ ] Crontab :
@@ -62,7 +67,7 @@ TODO
         * [ ] YQ
     * [ ] Dossier octoprint :
         * [ ] Vérifier présence de fichier zip
-        * [ ] Décompresser dans un temps
+        * [ ] Décompresser dans un temp
         * [ ] Màj des scripts maisons
         * [ ] Scripts pour les différents sauts de version
 * [ ] Scripts custom :

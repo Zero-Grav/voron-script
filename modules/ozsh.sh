@@ -3,7 +3,11 @@
 # Installation de OZSH
 #
 
-source ./_common.sh
+if [ -f _common.sh ]; then
+  source ./_common.sh
+elif [ -d modules ]; then
+  source ./modules/_common.sh
+fi
 sudo echo "" > /dev/null
 
 _log "  => Installation de Oh My ZSH"

@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 #
 # Passage du RPI en français
-
-
-#################
-### VARIABLES ###
-#################
-source ./_common.sh
+if [ -f _common.sh ]; then
+  source ./_common.sh
+elif [ -d modules ]; then
+  source ./modules/_common.sh
+fi
 
 #########################
 ### CHECK UTILISATEUR ###
