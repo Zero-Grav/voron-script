@@ -18,7 +18,7 @@ TODO
             * [ ] sidebar
             * [ ] tab
             * [ ] settings
-    * [ ] Configuration de l'imprimante dans octoprint
+    * [X] Configuration de l'imprimante dans octoprint
     * [ ] Configuration des options de boot RPI
     * [X] Klipper :
         * [X] Téléchargement des sources

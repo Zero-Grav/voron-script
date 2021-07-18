@@ -161,6 +161,9 @@ ${CMD_OCTO} user add --password "${USERNAME}" --admin ${USERNAME} > /dev/null
 ###############################
 ### CONFIGURATION OCTOPRINT ###
 ###############################
+_log "=> Profil d'imprimante"
+cp -f ${SCRIPT_DIR}/conf/voron.profile /home/pi/.octoprint/printerProfiles/_default.profile
+
 #/oprint/bin/octoprint config effective
 _log "=> Configuration octoprint"
 _config appearance.name ${HOSTNAME}
