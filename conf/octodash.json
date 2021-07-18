@@ -27,11 +27,11 @@
 		},
 		"plugins": {
 			"displayLayerProgress": {
-				"enabled": false
+				"enabled": true
 			},
 			"enclosure": {
-				"enabled": false,
-				"ambientSensorID": null,
+				"enabled": true,
+				"ambientSensorID": 1,
 				"filament1SensorID": null,
 				"filament2SensorID": null
 			},
@@ -39,10 +39,10 @@
 				"enabled": false
 			},
 			"preheatButton": {
-				"enabled": false
+				"enabled": true
 			},
 			"printTimeGenius": {
-				"enabled": false
+				"enabled": true
 			},
 			"psuControl": {
 				"enabled": false,
@@ -66,46 +66,88 @@
 		"octodash": {
 			"customActions": [
 				{
-					"icon": "home",
-					"command": "G28",
 					"color": "#dcdde1",
+					"command": "G28",
 					"confirm": false,
-					"exit": true
+					"exit": false,
+					"icon": "home"
 				},
 				{
-					"icon": "ruler-vertical",
+					"color": "#c0c1c4",
 					"command": "G29",
-					"color": "#4bae50",
 					"confirm": false,
-					"exit": true
+					"exit": false,
+					"icon": "parking"
 				},
 				{
-					"icon": "fire-alt",
-					"command": "M140 S50; M104 S185",
 					"color": "#e1b12c",
+					"command": "M140 S60; M104 S200",
 					"confirm": false,
-					"exit": true
+					"exit": true,
+					"icon": "fire-alt"
 				},
 				{
-					"icon": "snowflake",
-					"command": "M140 S0; M104 S0",
 					"color": "#0097e6",
+					"command": "M140 S0; M104 S0",
 					"confirm": false,
-					"exit": true
+					"exit": true,
+					"icon": "snowflake"
 				},
 				{
-					"icon": "redo-alt",
-					"command": "[!RELOAD]",
 					"color": "#7f8fa6",
+					"command": "[!RELOAD]",
 					"confirm": true,
-					"exit": false
+					"exit": false,
+					"icon": "redo-alt"
 				},
 				{
-					"icon": "power-off",
-					"command": "[!SHUTDOWN]",
 					"color": "#e84118",
+					"command": "[!SHUTDOWN]",
 					"confirm": true,
-					"exit": false
+					"exit": false,
+					"icon": "power-off"
+				},
+				{
+					"color": "#ffc01f",
+					"command": "M118 //action:light_on",
+					"confirm": false,
+					"exit": false,
+					"icon": "lightbulb"
+				},
+				{
+					"color": "#5e5e5e",
+					"command": "M118 //action:light_off",
+					"confirm": false,
+					"exit": false,
+					"icon": "lightbulb"
+				},
+				{
+					"color": "#53b02b",
+					"command": "M118 //action:extract_on",
+					"confirm": false,
+					"exit": false,
+					"icon": "fan"
+				},
+				{
+					"color": "#a84931",
+					"command": "M118 //action:extract_off",
+					"confirm": false,
+					"exit": false,
+					"icon": "fan"
+				},
+				{
+					"color": "#9c59db",
+					"command": "[!WEB]http://localhost/plugin/octodashcompanion/webcam",
+					"confirm": false,
+					"exit": false,
+					"icon": "video"
+				},
+				{
+					"color": "#667cd6",
+					"command": "G32",
+					"confirm": false,
+					"exit": false,
+					"icon": "layer-group"
 				}
 			],
 			"fileSorting": {
@@ -122,7 +164,7 @@
 			"turnScreenOffWhileSleeping": true,
 			"turnOnPrinterWhenExitingSleep": false,
 			"preferPreviewWhilePrinting": true,
-			"previewProgressCircle": false,
+			"previewProgressCircle": true,
 			"screenSleepCommand": "xset dpms force standby",
 			"screenWakeupCommand": "xset s off && xset -dpms && xset s noblank"
 		}

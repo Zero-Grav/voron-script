@@ -53,6 +53,9 @@ if [ "$API_KEY" != "" ]; then
   sed -i "s/API_KEY/${API_KEY}/g" ${CONF_DASH}
 fi
 
+_log "    => Theme"
+cp -f ${SCRIPT_DIR}/conf/octodash.css ~/.config/octodash/custom-styles.css
+
 # Config de l'autostart
 _log "    => Autostart"
 cat <<EOF > ~/.xinitrc
@@ -63,7 +66,8 @@ xset s noblank
 xset -dpms
 
 ratpoison&
-octodash
+LANG=fr_FR.UTF-8 octodash
+#octodash
 EOF
 
 # Bash

@@ -10,7 +10,6 @@
 source ./modules/_common.sh
 
 
-
 #########################
 ### CHECK UTILISATEUR ###
 #########################
@@ -64,7 +63,6 @@ echo -e "${NC}"
 sudo sed -i "s/octopi/${HOSTNAME} octopi/" /etc/hosts
 
 
-
 ###############
 ### UPGRADE ###
 ###############
@@ -75,7 +73,6 @@ _log "  => Dépôt"
 sudo apt update -q
 _log "  => Système"
 sudo apt full-upgrade -y
-
 
 
 ######################
@@ -97,7 +94,6 @@ _log "  => Divers"
 sudo apt install -y tree
 
 
-
 #########################
 ### Configuration API ###
 #########################
@@ -113,7 +109,6 @@ _config server.secretKey $(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | 
 _log "=> Redémarrage octoprint"
 sudo service octoprint restart
 sleep 5
-
 
 
 ###############
@@ -233,9 +228,53 @@ _plugins "HeaterTimeout" "https://github.com/google/OctoPrint-HeaterTimeout/arch
 _config plugins.HeaterTimeout.enabled true
 _config plugins.HeaterTimeout.timeout 900
 
+# SlicerThumbnails
+_plugins "SlicerThumbnails" "https://github.com/jneilliii/OctoPrint-PrusaSlicerThumbnails/archive/master.zip"
+
+# BackupScheduler
+_plugins "BackupScheduler" "https://github.com/jneilliii/OctoPrint-BackupScheduler/archive/master.zip"
+_config plugins.backupscheduler.daily.enabled true
+_config plugins.backupscheduler.daily.exclude_timelapse true
+_config plugins.backupscheduler.daily.exclude_uploads true
+_config plugins.backupscheduler.daily.retention '7'
+_config plugins.backupscheduler.weekly.day '7'
+_config plugins.backupscheduler.weekly.enabled true
+_config plugins.backupscheduler.weekly.exclude_timelapse true
+_config plugins.backupscheduler.weekly.exclude_uploads true
+_config plugins.backupscheduler.weekly.retention '4'
+
+# Autoscroll
+_plugins "Autoscroll" "https://github.com/MoonshineSG/OctoPrint-Autoscroll/archive/master.zip"
+
+# ActiveFiltersExtended
+_plugins "ActiveFiltersExtended" "https://github.com/jneilliii/OctoPrint-ActiveFiltersExtended/archive/master.zip"
+
+# RequestSpinner
+_plugins "RequestSpinner" "https://github.com/OctoPrint/OctoPrint-RequestSpinner/archive/master.zip"
+
+# DisplayLayerProgress
+_plugins "DisplayLayerProgress" "https://github.com/OllisGit/OctoPrint-DisplayLayerProgress/releases/latest/download/master.zip"
+
+# PrintTimeGenius
+_plugins "PrintTimeGenius" "https://github.com/eyal0/OctoPrint-PrintTimeGenius/archive/master.zip"
+
+# WideScreen
+_plugins "WideScreen" "https://github.com/jneilliii/OctoPrint-WideScreen/archive/master.zip"
+_plugins "TabOrder" "https://github.com/jneilliii/OctoPrint-TabOrder/archive/master.zip"
+
+# preheat
+_plugins "preheat" "https://github.com/marian42/octoprint-preheat/archive/master.zip"
+
 
 
 #############################
 ### FIN DE L'INSTALLATION ###
 #############################
 ./modules/update-octoprint.sh
+
+_log " => ${RED} Redémarrage service octoprint"
+sudo service octoprint restart
+sleep 5
+
+_log "Fin de l'installation : Nettoyage"
+sudo apt autoremove -y

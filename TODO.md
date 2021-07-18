@@ -1,7 +1,6 @@
 TODO
 ====
 
-* [ ] Versionner sur git
 * [ ] Installation initiale :
     * [X] Vérifier l'utilisateur courant
     * [X] Forcer la modification du mdp pi/root
@@ -39,25 +38,41 @@ TODO
         * [ ] Splashscreen
         * [ ] Custom CSS
     * [ ] Plugins :
-        * [ ] Installation :
-            * [X] FloatingNavbar
-            * [X] TempsGraph
-            * [X] WebcamTab
-            * [X] Webcam FullScreen
-            * [X] OctoDash-Companion
-            * [X] Enclosure
-            * [X] FileManager
         * [ ] Configuration :
-            * [X] TempsGraph
             * [ ] OctoDash-Companion
             * [ ] Enclosure
-            * [ ] FileManager
+            * [ ] Calibration Companion
+            * [ ] Action Commands et/ou GCODE System Commands
+            * [ ] Consolidate Temp Control
+            * [ ] CooldownNotification
+            * [ ] Custom Control Editor
+            * [ ] Draggable Files
+            * [ ] Exclude Region
+            * [ ] Firmware Updater
+            * [ ] Filament Manager + CostEstimation
+            * [ ] MarlinGcodeDocumentation
+            * [ ] Navbar Temp
+            * [ ] Dashboard
+            * [ ] DragonOrder
+            * [ ] PrettyGCode
+            * [ ] TerminalCommands
+            * [ ] Webhooks
+            * [ ] OctoRelay
+            * [ ] Octolapse
+            * [ ] PrintJobHistory
+            * [ ] Printer Statistics
+            * [ ] Stateful Sidebar
+            * [ ] System Command Editor
+            * [ ] TemperatureFailsafe
+            * [ ] Top Temp
+            * [ ] WLED Connection
+            * [ ] UI Customizer / Themeify 
     * [ ] Divers :
         * [ ] GPIO serveur
         * [ ] Crontab :
             * [ ] boot
             * [ ] interval régulier
-            * [ ] Backup
+            * [X] Backup
         * [ ] Log
 * [ ] Upgrade :
     * [ ] Script d'upgrade :
@@ -100,10 +115,12 @@ TODO
             * [X] Passer en param l'adresse IP
         * [ ] Script de backup
         * [ ] Script pour optimiser le fichier img
+        * [ ] Versionner sur git
 * [ ] Backup :
     * [ ] Crontab
     * [ ] ./oprint/bin/octoprint plugins backup
-    * [ ] Plugins de backup
+    * [X] Plugins de backup
 * [ ] Divers :
     * [ ] InfluxDB ou API rest
+    * [ ] MQTT
     * [ ] VPN gkx ?
