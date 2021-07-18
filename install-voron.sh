@@ -214,3 +214,7 @@ _config plugins.tempsgraph.startWithAutoScale true
 _plugins "WebcamTab" "https://github.com/gruvin/OctoPrint-WebcamTab/archive/master.zip"
 _plugins "Webcam FullScreen" "https://github.com/BillyBlaze/OctoPrint-FullScreen/archive/master.zip"
 
+# Klipper
+_plugins "Klipper" "https://github.com/AliceGrey/OctoprintKlipperPlugin/archive/master.zip"
+_config plugins.klipper.configuration.reload_command FIRMWARE_RESTART
+_config plugins.klipper.configuration.connection.replace_connection_panel false

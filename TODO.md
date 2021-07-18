@@ -20,17 +20,17 @@ TODO
             * [ ] settings
     * [ ] Configuration de l'imprimante dans octoprint
     * [ ] Configuration des options de boot RPI
-    * [ ] Klipper :
+    * [X] Klipper :
         * [X] Téléchargement des sources
         * [X] Installation
         * [X] Compilation
         * [X] Copie des fichiers binaires dans un dossier téléchargeable via octoprint
-        * [ ] Plugins Octoklipper :
-            * [ ] Installation
-            * [ ] Configuration
+        * [X] Plugins Octoklipper :
+            * [X] Installation
+            * [X] Configuration
     * [ ] Octodash :
         * [X] Installation d'octodash
-        * [ ] Installation du plugins octodash-companion
+        * [X] Installation du plugins octodash-companion
         * [ ] Configuration :
             * [X] Octodash
             * [ ] Plugins
