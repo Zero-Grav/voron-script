@@ -49,6 +49,12 @@ if [ "${HOSTNAME}" = "" ]; then
   HOSTNAME=${HOSTNAME_DEFAULT}
 fi
 
+# Dev mode
+DEVMODE=0
+read -p "Development environnement ? [y/N] " ASK_DEV
+if [ "${ASK_DEV}" == "y" ]; then
+  DEVMODE=1
+fi
 
 
 #####################
@@ -72,7 +78,9 @@ sudo apt remove --purge -y -q bluez-firmware bluez libraspberrypi-doc
 _log "  => Dépôt"
 sudo apt update -q
 _log "  => Système"
-sudo apt full-upgrade -y
+if [ ${DEVMODE} -eq 0 ]; then
+  sudo apt full-upgrade -y
+fi
 
 
 ######################
@@ -129,11 +137,15 @@ _log "  => Installation"
 ./scripts/install-octopi.sh
 
 _log "  => Compilation firmware"
+mkdir -p ${SHARE_DIR}
 #  make menuconfig
 cp ${SCRIPT_DIR}/conf/klipper-makeconfig ${KLIPPER_DIR}/.config
-make
-mkdir -p ${SHARE_DIR}
-cp ${KLIPPER_DIR}/out/klipper.bin ${SHARE_DIR}
+if [ ${DEVMODE} -eq 0 ]; then
+  make
+  cp ${KLIPPER_DIR}/out/klipper.bin ${SHARE_DIR}
+else
+  touch ${SHARE_DIR}/klipper-empty.bin
+fi
 
 _log "  => Configuration"
 cp -f ~/voron/conf/${KLIPPER_CONF_VERSION}-klipper.cfg ~/printer.cfg
@@ -180,10 +192,14 @@ _config serial.port /tmp/printer
 
 _log "=> Désactivation des plugins inutiles"
 _config plugins._disabled[0] errortracking "ErrorTracking"
-_config plugins._disabled[1] virtual_printer "VirtualPrinter"
-_config plugins._disabled[2] cura "Cura"
+_config plugins._disabled[1] cura "Cura"
+if [ ${DEVMODE} -eq 0 ]; then
+  _config plugins._disabled[2] virtual_printer "VirtualPrinter"
+else
+  _config plugins.tracking.enabled false "Tracking"
+fi
 
-_log "  => Temperatures"
+_log "=> Temperatures"
 _config temperature.cutoff 15
 _config temperature.profiles[0].bed 60
 _config temperature.profiles[0].extruder 200
@@ -269,7 +285,11 @@ _plugins "preheat" "https://github.com/marian42/octoprint-preheat/archive/master
 ############
 ### ADXL ###
 ############
-./modules/adxl.sh
+if [ ${DEVMODE} -eq 0 ]; then
+  ./modules/adxl.sh
+else
+  _log "=> ADXL (Pas de compilation en environnement de dev)"
+fi
 
 
 #############################
