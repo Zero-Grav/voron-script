@@ -101,6 +101,7 @@ chmod +x /usr/local/bin/yq3
 _log "  => Divers"
 sudo apt install -y tree
 sudo ln -s ${SCRIPT_DIR}/conf/crontab /etc/cron.d/voron-cron
+mkdir -p ${SHARE_DIR}
 
 
 #########################
@@ -138,9 +139,9 @@ _log "  => Installation"
 ./scripts/install-octopi.sh
 
 _log "  => Compilation firmware"
-mkdir -p ${SHARE_DIR}
 #  make menuconfig
-cp ${SCRIPT_DIR}/conf/klipper-makeconfig ${KLIPPER_DIR}/.config
+cp ${SCRIPT_DIR}/conf/klipper/makeconfig.txt ${KLIPPER_DIR}/.config
+cp ${KLIPPER_DIR}/.config ${SHARE_DIR}/klipper-makeconfig.txt
 if [ ${DEVMODE} -eq 0 ]; then
   make
   cp ${KLIPPER_DIR}/out/klipper.bin ${SHARE_DIR}

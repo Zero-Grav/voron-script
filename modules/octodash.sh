@@ -46,7 +46,7 @@ rm /tmp/octodash.deb
 _log "  => Configuration"
 _log "    => API"
 mkdir -p $(dirname ${CONF_DASH})
-cp -f ${SCRIPT_DIR}/conf/octodash.json ${CONF_DASH}
+cp -f ${SCRIPT_DIR}/conf/octodash/octodash.json ${CONF_DASH}
 _config api.allowCrossOrigin true
 API_KEY=$(yq3 r ${CONF_OCTO} api.key)
 if [ "$API_KEY" != "" ]; then
@@ -54,7 +54,8 @@ if [ "$API_KEY" != "" ]; then
 fi
 
 _log "    => Theme"
-cp -f ${SCRIPT_DIR}/conf/octodash.css ~/.config/octodash/custom-styles.css
+cp -f ${SCRIPT_DIR}/conf/octodash/octodash.css ~/.config/octodash/custom-styles.css
+cp -f ${SCRIPT_DIR}/conf/octodash/octodash.css ${SHARE_DIR}/octodash-theme.txt
 
 # Config de l'autostart
 _log "    => Autostart"
