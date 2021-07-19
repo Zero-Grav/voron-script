@@ -16,8 +16,7 @@ TODO
         * [ ] Splashscreen
     * [ ] Plugins :
         * [ ] À configuration :
-            * [ ] BackupScheduler
-            * [ ] ActiveFilter
+            * [X] BackupScheduler
             * [ ] Enclosure
             * [ ] WideScreen
             * [ ] TabOrder
@@ -87,7 +86,7 @@ TODO
     * [ ] Dev :
         * [ ] Script de backup
         * [ ] Script pour optimiser le fichier img
-        * [ ] Versionner sur git
+        * [X] Versionner sur git
         * [ ] Compléter la doc
 * [ ] Divers :
     * [ ] InfluxDB ou API rest
