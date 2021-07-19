@@ -12,7 +12,7 @@ TODO
     * [ ] Octodash :
         * [ ] Configuration des boutons d'actions
         * [ ] Veille
-        * [ ] Rotation de l'écran
+        * [X] Rotation de l'écran
         * [ ] Splashscreen
     * [ ] Plugins :
         * [ ] À configuration :
@@ -79,28 +79,17 @@ TODO
             * [ ] LED : continue
             * [ ] Action : nada
     * [ ] Beep
-    * [X] ADXL :
-        * [X] Installation
-        * [X] Compilation
-        * [X] Configuration
     * [ ] Klipper :
         * [ ] Upgrade du git
         * [ ] Système d'overwrite de la conf
         * [ ] Compilation du bin
         * [ ] Copie du bin dans un dossier de DL
     * [ ] Dev :
-        * [ ] Révocation clé SSH :
-            * [X] Passer en param l'adresse IP
-            * [ ] Copier la clé directement sur le nouveau Rpi
         * [ ] Script de backup
         * [ ] Script pour optimiser le fichier img
         * [ ] Versionner sur git
         * [ ] Compléter la doc
-        * [X] Compilation spécifique lors du dev
-* [X] Backup :
-    * [X] Crontab
-    * [X] ./oprint/bin/octoprint plugins backup
 * [ ] Divers :
     * [ ] InfluxDB ou API rest
     * [ ] MQTT
-    * [ ] VPN gkx ?
+    * [ ] VPN ?

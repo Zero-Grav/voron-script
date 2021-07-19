@@ -163,6 +163,10 @@ ${CMD_OCTO} user add --password "${USERNAME}" --admin ${USERNAME} > /dev/null
 ### OCTODASH ###
 ################
 ./modules/octodash.sh
+_log "=> Rotation de l'écran"
+DISPLAY=:0 xrandr --output HDMI-1 --rotate inverted
+DISPLAY=:0 xrandr --output HDMI-2 --rotate normal
+sudo sed -i "s/#hdmi_force_hotplug=1/hdmi_force_hotplug=1/" /boot/config.txt
 
 
 ###############################
