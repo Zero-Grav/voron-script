@@ -54,8 +54,8 @@ if [ "$API_KEY" != "" ]; then
 fi
 
 _log "    => Theme"
-cp -f ${SCRIPT_DIR}/conf/octodash/octodash.css ~/.config/octodash/custom-styles.css
-cp -f ${SCRIPT_DIR}/conf/octodash/octodash.css ${SHARE_DIR}/octodash-theme.txt
+cp -f ${SCRIPT_DIR}/conf/octodash/octodash.css ${CSS_DASH}
+cp -f ${CSS_DASH} ${SHARE_DIR}/octodash-theme.txt
 
 # Config de l'autostart
 _log "    => Autostart"

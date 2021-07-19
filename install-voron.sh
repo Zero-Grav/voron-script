@@ -100,7 +100,12 @@ chmod +x /usr/local/bin/yq3
 # Divers
 _log "  => Divers"
 sudo apt install -y tree
-sudo ln -s ${SCRIPT_DIR}/conf/crontab /etc/cron.d/voron-cron
+
+# Crontab
+_log "  => Crontab"
+sudo cp ${SCRIPT_DIR}/conf/crontab /etc/cron.d/voron-cron
+sudo sed -i "s/[SHARE_DIR]/${SHARE_DIR}/g" /etc/cron.d/voron-cron
+sudo sed -i "s/[SCRIPT_DIR]/${SCRIPT_DIR}/g" /etc/cron.d/voron-cron
 mkdir -p ${SHARE_DIR}
 
 

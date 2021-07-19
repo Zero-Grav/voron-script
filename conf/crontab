@@ -1,4 +1,7 @@
 # m h  dom mon dow   user	command
 
 # Creation du dossier de partage
-@reboot pi mkdir -p /home/pi/.octoprint/uploads/system
+@reboot pi mkdir -p [SHARE_DIR]
+
+# Synchro des fichiers
+@reboot pi cd [SCRIPT_DIR]/module && bash [SCRIPT_DIR]/modules/update-file.sh

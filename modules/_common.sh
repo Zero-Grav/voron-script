@@ -29,6 +29,7 @@ SHARE_DIR="/home/pi/.octoprint/uploads/system"
 GPIO_DIR="${SCRIPT_DIR}/gpio"
 CONF_OCTO="/home/pi/.octoprint/config.yaml"
 CONF_DASH="/home/pi/.config/octodash/config.json"
+CSS_DASH="/home/pi/.config/octodash/custom-styles.css"
 CMD_OCTO="/home/pi/oprint/bin/octoprint"
 PIP_BIN="/home/pi/oprint/bin/pip"
 

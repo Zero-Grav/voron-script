@@ -8,7 +8,9 @@ TODO
             * [ ] sidebar
             * [ ] tab
             * [ ] settings
-    * [ ] Configuration des options de boot RPI
+    * [ ] Configuration des options de boot RPI :
+        * [ ] Sondes
+        * [ ] SPI pour neoled
     * [ ] Octodash :
         * [ ] Configuration des boutons d'actions
         * [ ] Veille
