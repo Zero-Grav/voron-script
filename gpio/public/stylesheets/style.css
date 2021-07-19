@@ -66,3 +66,23 @@ div.row > div.pin span.pin.gpio {
 div.row > div.pin span.pin.i2c {
     border-color: yellow;
 }
+
+.system span {
+    color: #2d2d2d;
+    font-style: italic;
+}
+
+.desc {
+    color: #501863;
+    padding-left: 10px;
+    font-weight: bold;
+}
+.input {
+    color: #98194e;
+}
+
+.relais {
+    color: #841f18;
+    font-weight: bold;
+    padding-left: 10px;
+}

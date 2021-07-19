@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Raspberry Pi GPIO Simple-GUI' });
+  res.render('index', { title: 'Débuggage GPIO' });
 });
 
 module.exports = router;
