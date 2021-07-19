@@ -60,9 +60,9 @@ TODO
             * [ ] Configuration des pins
             * [ ] Script pour le démarrage/arrêt de nodejs
             * [ ] Forever en mode dev
-        * [ ] Crontab :
-            * [ ] boot
-            * [ ] interval régulier
+        * [x] Crontab :
+            * [x] boot
+            * [X] interval régulier
 * [ ] Upgrade :
     * [ ] Script d'upgrade :
         * [ ] MàJ du RPI

@@ -100,6 +100,7 @@ chmod +x /usr/local/bin/yq3
 # Divers
 _log "  => Divers"
 sudo apt install -y tree
+sudo ln -s ${SCRIPT_DIR}/conf/crontab /etc/cron.d/voron-cron
 
 
 #########################
@@ -301,7 +302,7 @@ _plugins "DashBoard" "https://github.com/j7126/OctoPrint-Dashboard/archive/maste
 
 # Upload Everything
 _plugins "UploadEverything" "https://github.com/rlogiacco/UploadAnything/archive/master.zip"
-_config plugin.uploadanything.allowed: '3mf, obj, stl, png, gif, jpg, bin, zip'
+_config plugin.uploadanything.allowed: '3mf, obj, stl, png, gif, jpg, bin, zip, txt, log'
 
 # Octolapse
 _plugins "Octolapse" "https://github.com/FormerLurker/Octolapse/archive/master.zip"
