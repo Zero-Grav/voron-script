@@ -14,4 +14,4 @@ sudo echo "" > /dev/null
 sudo apt install -y --no-install-recommends python-numpy python-matplotlib
 
 _log "=> ADXL : Boot"
-echo "dtparam=spi=on" | sudo tee -a /boot/config.txt > /dev/null
+sudo sed -i "s/#dtparam=spi=on/dtparam=spi=on/" /boot/config.txt
