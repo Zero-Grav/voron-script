@@ -16,10 +16,12 @@ TODO
         * [ ] Splashscreen
     * [ ] Plugins :
         * [ ] À configuration :
+            * [ ] BackupScheduler
             * [ ] ActiveFilter
             * [ ] Enclosure
             * [ ] WideScreen
             * [ ] TabOrder
+            * [ ] UploadAnything
         * [ ] À tester/valider :
             * [ ] Calibration Companion
             * [ ] Action Commands et/ou GCODE System Commands
@@ -93,6 +95,8 @@ TODO
         * [ ] Script de backup
         * [ ] Script pour optimiser le fichier img
         * [ ] Versionner sur git
+        * [ ] Compléter la doc
+        * [X] Compilation spécifique lors du dev
 * [X] Backup :
     * [X] Crontab
     * [X] ./oprint/bin/octoprint plugins backup
