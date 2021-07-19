@@ -167,7 +167,8 @@ _log "=> Rotation de l'écran"
 DISPLAY=:0 xrandr --output HDMI-1 --rotate inverted
 DISPLAY=:0 xrandr --output HDMI-2 --rotate normal
 sudo sed -i "s/#hdmi_force_hotplug=1/hdmi_force_hotplug=1/" /boot/config.txt
-
+sudo sed -i "s/MatchIsTouchscreen \"on\"/MatchIsTouchscreen \"on\"\r\n\tOption \"TransformationMatrix\" \"-1 0 1 0 -1 1 0 0 1\"/g" /usr/share/X11/xorg.conf.d/40-libinput.conf
+sed -i "s/#DISPLAY/DISPLAY/g" ~/.xinitrc
 
 ###############################
 ### CONFIGURATION OCTOPRINT ###
@@ -197,10 +198,11 @@ _config serial.port /tmp/printer
 _log "=> Désactivation des plugins inutiles"
 _config plugins._disabled[0] errortracking "ErrorTracking"
 _config plugins._disabled[1] cura "Cura"
-if [ ${DEVMODE} -eq 0 ]; then
-  _config plugins._disabled[2] virtual_printer "VirtualPrinter"
-else
+if [ ${DEVMODE} -eq 1 ]; then
   _config plugins.tracking.enabled false "Tracking"
+  _config plugins.virtual_printer.enabled true
+else
+  _config plugins._disabled[2] virtual_printer "VirtualPrinter"
 fi
 
 _log "=> Temperatures"
@@ -235,7 +237,7 @@ _plugins "Webcam FullScreen" "https://github.com/BillyBlaze/OctoPrint-FullScreen
 # Klipper
 _plugins "Klipper" "https://github.com/AliceGrey/OctoprintKlipperPlugin/archive/master.zip"
 _config plugins.klipper.configuration.reload_command FIRMWARE_RESTART
-_config plugins.klipper.configuration.connection.replace_connection_panel false
+_config plugins.klipper.connection.replace_connection_panel false
 
 # Enclosure
 _plugins "Enclosure" "https://github.com/vitormhenrique/OctoPrint-Enclosure/archive/master.zip"
@@ -257,23 +259,33 @@ _config plugins.backupscheduler.daily.enabled true
 _config plugins.backupscheduler.daily.exclude_timelapse true
 _config plugins.backupscheduler.daily.exclude_uploads true
 _config plugins.backupscheduler.daily.retention '7'
+_config plugins.backupscheduler.daily.time '01:00'
 _config plugins.backupscheduler.weekly.day '7'
 _config plugins.backupscheduler.weekly.enabled true
 _config plugins.backupscheduler.weekly.exclude_timelapse true
 _config plugins.backupscheduler.weekly.exclude_uploads true
 _config plugins.backupscheduler.weekly.retention '4'
+_config plugins.backupscheduler.weekly.time '02:00'
 
 # Autoscroll
 _plugins "Autoscroll" "https://github.com/MoonshineSG/OctoPrint-Autoscroll/archive/master.zip"
 
 # ActiveFiltersExtended
 _plugins "ActiveFiltersExtended" "https://github.com/jneilliii/OctoPrint-ActiveFiltersExtended/archive/master.zip"
+_config plugins.active_filters_extended.activeFilters[0] '(Send: (N\d+\s+)?M105)|(Recv:\s+(ok\s+([PBN]\d+\s+)*)?([BCLPR]|T\d*):-?\d+)'
+_config plugins.active_filters_extended.activeFilters[1] '(Send: (N\d+\s+)?M27)|(Recv: SD printing byte)|(Recv: Not SD printing)'
+_config plugins.active_filters_extended.activeFilters[2] 'Recv: wait'
+_config plugins.active_filters_extended.activeFilters[3] 'Recv: (echo:\s*)?busy:\s*processing'
 
 # RequestSpinner
 _plugins "RequestSpinner" "https://github.com/OctoPrint/OctoPrint-RequestSpinner/archive/master.zip"
 
 # DisplayLayerProgress
 _plugins "DisplayLayerProgress" "https://github.com/OllisGit/OctoPrint-DisplayLayerProgress/releases/latest/download/master.zip"
+_config plugins.DisplayLayerProgress.showAllPrinterMessages false
+_config plugins.DisplayLayerProgress.showOnBrowserTitle false
+_config plugins.DisplayLayerProgress.showOnNavBar false
+_config plugins.DisplayLayerProgress.showOnPrinterDisplay false
 
 # PrintTimeGenius
 _plugins "PrintTimeGenius" "https://github.com/eyal0/OctoPrint-PrintTimeGenius/archive/master.zip"
@@ -284,7 +296,7 @@ _plugins "TabOrder" "https://github.com/jneilliii/OctoPrint-TabOrder/archive/mas
 
 # preheat
 _plugins "preheat" "https://github.com/marian42/octoprint-preheat/archive/master.zip"
-
+_config plugins.preheat.enable_chamber false
 
 ############
 ### ADXL ###
