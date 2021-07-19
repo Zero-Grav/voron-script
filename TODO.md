@@ -17,10 +17,17 @@ TODO
     * [ ] Plugins :
         * [ ] À configuration :
             * [X] BackupScheduler
-            * [ ] Enclosure
+            * [ ] Enclosure :
+                * [ ] DS18B20 :
+                    * [x] Ajouter les sondes
+                    * [ ] Adresses
+                * [ ] SSR Imprimante
+                * [ ] Extracteur
+                * [ ] NeoLed
             * [ ] WideScreen
             * [ ] TabOrder
-            * [ ] UploadAnything
+            * [X] UploadAnything (à confirmer)
+            * [ ] Dashboard
         * [ ] À tester/valider :
             * [ ] Calibration Companion
             * [ ] Action Commands et/ou GCODE System Commands
@@ -33,13 +40,12 @@ TODO
             * [ ] Filament Manager + CostEstimation
             * [ ] MarlinGcodeDocumentation
             * [ ] Navbar Temp
-            * [ ] Dashboard
             * [ ] DragonOrder
             * [ ] PrettyGCode
             * [ ] TerminalCommands
             * [ ] Webhooks
             * [ ] OctoRelay
-            * [ ] Octolapse
+            * [X] Octolapse
             * [ ] PrintJobHistory
             * [ ] Printer Statistics
             * [ ] Stateful Sidebar

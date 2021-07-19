@@ -241,6 +241,70 @@ _config plugins.klipper.connection.replace_connection_panel false
 
 # Enclosure
 _plugins "Enclosure" "https://github.com/vitormhenrique/OctoPrint-Enclosure/archive/master.zip"
+_log "   => Sonde caisson"
+_config plugins.enclosure.rpi_inputs[0].action_type output_control
+_config plugins.enclosure.rpi_inputs[0].label Caisson
+_config plugins.enclosure.rpi_inputs[0].input_type temperature_sensor
+_config plugins.enclosure.rpi_inputs[0].gpio_pin '4'
+_config plugins.enclosure.rpi_inputs[0].index_id 1
+_config plugins.enclosure.rpi_inputs[0].input_pull_resistor input_pull_up
+_config plugins.enclosure.rpi_inputs[0].edge fall
+_config plugins.enclosure.rpi_inputs[0].controlled_io null
+_config plugins.enclosure.rpi_inputs[0].controlled_io_set_value low
+_config plugins.enclosure.rpi_inputs[0].temp_sensor_type 18b20
+_config plugins.enclosure.rpi_inputs[0].ds18b20_serial 28-001
+_config plugins.enclosure.rpi_inputs[0].filament_sensor_enabled true
+_config plugins.enclosure.rpi_inputs[0].use_fahrenheit false
+_config plugins.enclosure.rpi_inputs[0].temp_sensor_temp ''
+_config plugins.enclosure.rpi_inputs[0].temp_sensor_address ''
+_config plugins.enclosure.rpi_inputs[0].temp_sensor_humidity ''
+_config plugins.enclosure.rpi_inputs[0].temp_sensor_navbar true
+_log "   => Sonde ambiance"
+_config plugins.enclosure.rpi_inputs[1].action_type output_control
+_config plugins.enclosure.rpi_inputs[1].label Ambiance
+_config plugins.enclosure.rpi_inputs[1].input_type temperature_sensor
+_config plugins.enclosure.rpi_inputs[1].gpio_pin '4'
+_config plugins.enclosure.rpi_inputs[1].index_id 1
+_config plugins.enclosure.rpi_inputs[1].input_pull_resistor input_pull_up
+_config plugins.enclosure.rpi_inputs[1].edge fall
+_config plugins.enclosure.rpi_inputs[1].controlled_io null
+_config plugins.enclosure.rpi_inputs[1].controlled_io_set_value low
+_config plugins.enclosure.rpi_inputs[1].temp_sensor_type 18b20
+_config plugins.enclosure.rpi_inputs[1].ds18b20_serial 28-002
+_config plugins.enclosure.rpi_inputs[1].filament_sensor_enabled true
+_config plugins.enclosure.rpi_inputs[1].use_fahrenheit false
+_config plugins.enclosure.rpi_inputs[1].temp_sensor_temp ''
+_config plugins.enclosure.rpi_inputs[1].temp_sensor_address ''
+_config plugins.enclosure.rpi_inputs[1].temp_sensor_humidity ''
+_config plugins.enclosure.rpi_inputs[1].temp_sensor_navbar true
+_log "   => Sonde élec"
+_config plugins.enclosure.rpi_inputs[2].action_type output_control
+_config plugins.enclosure.rpi_inputs[2].label Élec
+_config plugins.enclosure.rpi_inputs[2].input_type temperature_sensor
+_config plugins.enclosure.rpi_inputs[2].gpio_pin '4'
+_config plugins.enclosure.rpi_inputs[2].index_id 1
+_config plugins.enclosure.rpi_inputs[2].input_pull_resistor input_pull_up
+_config plugins.enclosure.rpi_inputs[2].edge fall
+_config plugins.enclosure.rpi_inputs[2].controlled_io null
+_config plugins.enclosure.rpi_inputs[2].controlled_io_set_value low
+_config plugins.enclosure.rpi_inputs[2].temp_sensor_type 18b20
+_config plugins.enclosure.rpi_inputs[2].ds18b20_serial 28-00
+_config plugins.enclosure.rpi_inputs[2].filament_sensor_enabled true
+_config plugins.enclosure.rpi_inputs[2].use_fahrenheit false
+_config plugins.enclosure.rpi_inputs[2].temp_sensor_temp ''
+_config plugins.enclosure.rpi_inputs[2].temp_sensor_address ''
+_config plugins.enclosure.rpi_inputs[2].temp_sensor_humidity ''
+_config plugins.enclosure.rpi_inputs[2].temp_sensor_navbar true
+
+# DashBoard
+_plugins "DashBoard" "https://github.com/j7126/OctoPrint-Dashboard/archive/master.zip"
+
+# Upload Everything
+_plugins "UploadEverything" "https://github.com/rlogiacco/UploadAnything/archive/master.zip"
+_config plugin.uploadanything.allowed: '3mf, obj, stl, png, gif, jpg, bin, zip'
+
+# Octolapse
+_plugins "Octolapse" "https://github.com/FormerLurker/Octolapse/archive/master.zip"
 
 # FileManager
 _plugins "FileManager" "https://github.com/Salandora/OctoPrint-FileManager/archive/master.zip"
