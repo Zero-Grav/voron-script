@@ -118,4 +118,5 @@ EOF
 _plugins "Plugins" "https://github.com/jneilliii/OctoPrint-OctoDashCompanion/archive/master.zip"
 
 # Restart service
+sudo systemctl daemon-reload
 sudo service getty@tty1 restart
