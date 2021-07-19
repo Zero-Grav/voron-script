@@ -49,7 +49,11 @@ TODO
             * [ ] WLED Connection
             * [ ] UI Customizer / Themeify 
     * [ ] Divers :
-        * [ ] GPIO serveur
+        * [ ] GPIO serveur :
+            * [X] Installation
+            * [ ] Configuration des pins
+            * [ ] Script pour le démarrage/arrêt de nodejs
+            * [ ] Forever en mode dev
         * [ ] Crontab :
             * [ ] boot
             * [ ] interval régulier

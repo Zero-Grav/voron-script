@@ -307,6 +307,13 @@ else
   _log "=> ADXL (Pas de compilation en environnement de dev)"
 fi
 
+####################
+### GPIO Serveur ###
+####################
+_log "=> GPIO Serveur"
+sudo apt install -y --no-install-recommends nodejs npm
+cd ${GPIO_DIR}
+npm install
 
 #############################
 ### FIN DE L'INSTALLATION ###
