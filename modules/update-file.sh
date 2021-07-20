@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # Synchro du dossier share
-# /!\ Lancer via cron en user pi sans sudo
+# /!\ Lancé via cron en user pi sans sudo
 
 if [ -f _common.sh ]; then
   source ./_common.sh

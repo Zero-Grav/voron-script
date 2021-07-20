@@ -108,6 +108,9 @@ sudo sed -i "s/[SHARE_DIR]/${SHARE_DIR}/g" /etc/cron.d/voron-cron
 sudo sed -i "s/[SCRIPT_DIR]/${SCRIPT_DIR}/g" /etc/cron.d/voron-cron
 mkdir -p ${SHARE_DIR}
 
+# NeoLed
+echo "core_freq_min=500" | sudo tee -a /boot/config.txt > /dev/null
+sudo sed -i "s/#dtparam=spi=on/dtparam=spi=on/" /boot/config.txt
 
 #########################
 ### Configuration API ###
@@ -149,7 +152,7 @@ cp ${SCRIPT_DIR}/conf/klipper/makeconfig.txt ${KLIPPER_DIR}/.config
 cp ${KLIPPER_DIR}/.config ${SHARE_DIR}/klipper-makeconfig.txt
 if [ ${DEVMODE} -eq 0 ]; then
   make
-  cp ${KLIPPER_DIR}/out/klipper.bin ${SHARE_DIR}
+  cp -f ${KLIPPER_DIR}/out/klipper.bin ${SHARE_DIR}
 else
   touch ${SHARE_DIR}/klipper-empty.bin
 fi

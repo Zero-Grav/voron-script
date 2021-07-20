@@ -10,7 +10,7 @@ TODO
             * [ ] settings
     * [ ] Configuration des options de boot RPI :
         * [ ] Sondes
-        * [ ] SPI pour neoled
+        * [x] SPI pour neoled
     * [ ] Octodash :
         * [ ] Configuration des boutons d'actions
         * [ ] Veille
@@ -54,7 +54,7 @@ TODO
             * [ ] System Command Editor
             * [ ] TemperatureFailsafe
             * [ ] Top Temp
-            * [ ] WLED Connection
+            * [ ] ws281x
             * [ ] UI Customizer / Themeify 
     * [ ] Divers :
         * [ ] GPIO serveur :
@@ -91,10 +91,10 @@ TODO
             * [ ] Action : nada
     * [ ] Beep
     * [ ] Klipper :
-        * [ ] Upgrade du git
+        * [x] Upgrade du git
         * [ ] Système d'overwrite de la conf
-        * [ ] Compilation du bin
-        * [ ] Copie du bin dans un dossier de DL
+        * [x] Compilation du bin
+        * [x] Copie du bin dans un dossier de DL
     * [ ] Dev :
         * [ ] Script de backup
         * [ ] Script pour optimiser le fichier img
