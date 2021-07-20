@@ -159,6 +159,7 @@ fi
 
 _log "  => Configuration"
 cp -f ~/voron/conf/${KLIPPER_CONF_VERSION}-klipper.cfg ~/printer.cfg
+cp -f ~/voron/conf/klipper-macro.txt ${SHARE_DIR}/klipper-macro.txt
 cd ${SCRIPT_DIR}
 
 
